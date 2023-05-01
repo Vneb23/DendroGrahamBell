@@ -2,6 +2,7 @@ import os
 import random as rd
 import numpy as np
 from imageio.v3 import imread
+import matplotlib.pyplot as plt
 
 def choose(n: int) -> list[list[str]]:
     """Chosses randomly n images for each numbers"""
@@ -22,8 +23,9 @@ def from_image_to_array (name):
           name of the image
     """
     img = imread(name)
-    n = img.shape[0]
-    grey_img = np.zeros(n)
+    n,m,t = img.shape
+    img_bw = np.zeros((n,m))
     for i in range(n):
-        grey_img[i] = np.mean(np.mean(img[i][0], img[i,1]),img[i][2])
-    flat_img = np.ravel(grey_img)
+        for j in range(m):
+            img_bw[i][j] = int(np.mean(img[i][j]))
+    return img_bw.ravel()
