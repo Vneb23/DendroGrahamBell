@@ -18,5 +18,3 @@ def main(n: int, dist: str ="min") -> int:
     print(find_cluster(L_cluster, from_image_to_array(path_img), dist=dist).int)
     plt.imshow(img, cmap="gray")
     plt.show()
-
-#main(100, dist="mean")

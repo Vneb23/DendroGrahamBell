@@ -5,7 +5,7 @@ def stat(n_min: int, n_max: int, size:int, dist="min"):
     os.system('cls' if os.name == 'nt' else 'clear')
     Lx = []
     Ly = []
-    for i in tqdm(range(n_min, n_max+1), desc=f"Total"):
+    for i in tqdm(range(n_min, n_max+1), desc=f"Calcul en cours"):
         L_cluster = create_clusters(i)
         p = 0
         for j in range(size):
@@ -18,4 +18,5 @@ def stat(n_min: int, n_max: int, size:int, dist="min"):
     plt.plot(Lx, Ly)
     plt.show()
 
-stat(2, 25, 500, dist="mean")
+stat(2, 100, 20, dist="mean")
+#main(100, dist="mean")
