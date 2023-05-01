@@ -1,7 +1,7 @@
 import os
 import random as rd
 import numpy as np
-from imageio import imread
+from imageio.V2 import imread
 
 def choose(n: int) -> list[list[str]]:
     """Chosses randomly n images for each numbers"""
