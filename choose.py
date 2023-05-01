@@ -1,4 +1,7 @@
-import os, random as rd
+import os
+import random as rd
+import numpy as np
+from imageio.v3 import imread
 
 def choose(n: int) -> list[list[str]]:
     """Chosses randomly n images for each numbers"""
@@ -9,3 +12,18 @@ def choose(n: int) -> list[list[str]]:
         for i in range(n):
             L_dir[-1].append(l[rd.randint(0,len(l))])
     return L_dir
+
+
+
+def from_image_to_array (name):
+    """returns an array of greys from an image
+    ---------
+    name : string
+          name of the image
+    """
+    img = imread(name)
+    n = img.shape[0]
+    grey_img = np.zeros(n)
+    for i in range(n):
+        grey_img[i] = np.mean(np.mean(img[i][0], img[i,1]),img[i][2])
+    flat_img = np.ravel(grey_img)
