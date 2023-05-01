@@ -14,6 +14,10 @@ def choose(n: int) -> list[list[str]]:
     return L_dir
 
 
+def choose_one() -> str:
+    """Takes randomly an image among all"""
+    return choose(1)[rd.randint(0, 9)][0]
+
 
 def from_image_to_array (name):
     """returns an array of greys from an image
