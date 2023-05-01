@@ -2,6 +2,7 @@ from main import *
 from tqdm import tqdm
 
 def stat(n_min: int, n_max: int, size:int, dist="min"):
+    os.system('cls' if os.name == 'nt' else 'clear')
     Lx = []
     Ly = []
     for i in tqdm(range(n_min, n_max+1), desc=f"Total"):
@@ -17,4 +18,4 @@ def stat(n_min: int, n_max: int, size:int, dist="min"):
     plt.plot(Lx, Ly)
     plt.show()
 
-stat(2, 50, 50, dist="mean")
+stat(2, 25, 500, dist="mean")
