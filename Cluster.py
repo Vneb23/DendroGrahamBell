@@ -6,18 +6,21 @@ class Cluster:
         """The theorical value of the cluster"""
         self.values = values
         """Set of datas, which are arrays"""
-        self.repre = None
+        self.center = None
+        self.mean = None
+        self.update_mean()
         
     def add(self, v) -> None:
         """Adds a new vector"""
         self.values.append(v)
+        self.update_mean()
     
-    def mean(self):
-        """Returns the mean of the cluster if not empty"""
+    def update_mean(self):
+        """Update the mean of the cluster if not empty"""
         v_mean = np.zeros(self.values[0].shape)
         for v in self.values:
             v_mean += v
-        return v_mean/len(self.values)
+        self.mean = v_mean/len(self.values)
 
     def dist_min(self, v) -> float:
         """Returns the minimal distance between the given vector and a vector of the cluster"""
@@ -39,9 +42,9 @@ class Cluster:
         """Returns the distance between the given vector and the mean of the cluster"""
         return distance(v, self.mean())
     
-    def dist_repre(self, v) -> float:
+    def dist_center(self, v) -> float:
         """Returns the distance between the given vector and the repre of the cluster"""
-        if self.repre == None:
+        if self.center == None:
             raise Exception("Cluster.repre not defined")
         return distance(v, self.mean())
 
