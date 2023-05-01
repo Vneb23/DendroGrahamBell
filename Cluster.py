@@ -82,15 +82,3 @@ def find_cluster(L: list[Cluster], v, dist: str ="min") -> Cluster:
             C = c
     
     return C
-
-
-c = Cluster(2)
-print(c.int, c.center)
-
-c.add(np.array([0,1,2,3]))
-c.add(np.array([1,2,3,4]))
-
-print(c.values)
-print(f"c.dist_mean(np.array([4,3,2,1]))={c.dist_mean(np.array([4,3,2,1]))}, c.dist_min(np.array([4,3,2,1]))={c.dist_min(np.array([4,3,2,1]))}")
-
-print(find_cluster([c], np.array([1,2,3,4])).int)

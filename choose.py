@@ -1,8 +1,7 @@
 import os
 import random as rd
 import numpy as np
-from imageio.v3 import imread
-import matplotlib.pyplot as plt
+from imageio import imread
 
 def choose(n: int) -> list[list[str]]:
     """Chosses randomly n images for each numbers"""
