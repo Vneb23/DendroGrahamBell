@@ -19,4 +19,4 @@ def main(n: int, dist: str ="min") -> int:
     plt.imshow(img, cmap="gray")
     plt.show()
 
-main(10)
+main(10, dist="mean")
