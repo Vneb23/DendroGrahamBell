@@ -7,10 +7,10 @@ def choose(n: int) -> list[list[str]]:
     """Chosses randomly n images for each numbers"""
     L_dir = []
     for i in range(10):
-        l = os.listdir(f"Numbers_bis/{i}")
+        l = os.listdir(f"numbers/{i}")
         L_dir.append([])
         for j in range(n):
-            L_dir[-1].append(f"Numbers_bis/{i}/{l[rd.randint(0,len(l)-1)]}")
+            L_dir[-1].append(f"numbers/{i}/{l[rd.randint(0,len(l)-1)]}")
     return L_dir
 
 
