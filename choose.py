@@ -9,8 +9,8 @@ def choose(n: int) -> list[list[str]]:
     for i in range(10):
         l = os.listdir(f"numbers/{i}")
         L_dir.append([])
-        for i in range(n):
-            L_dir[-1].append(l[rd.randint(0,len(l))])
+        for j in range(n):
+            L_dir[-1].append(f"numbers/{i}/{l[rd.randint(0,len(l))]}")
     return L_dir
 
 
