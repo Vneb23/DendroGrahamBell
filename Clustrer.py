@@ -1,10 +1,10 @@
 import numpy as np
 
 class Cluster:
-    def __init__(self, n:int):
+    def __init__(self, n:int, values=[]):
         self.int = n
         """The theorical value of the cluster"""
-        self.values = []
+        self.values = values
         """Set of datas, which are arrays"""
         self.repre = None
         
@@ -27,7 +27,7 @@ class Cluster:
             d = min(d, d_)
         return d
     
-    def dist_min(self, v) -> float:
+    def dist_max(self, v) -> float:
         """Returns the maximal distance between the given vector and a vector of the cluster"""
         d = 0
         for v_ in self.values:
